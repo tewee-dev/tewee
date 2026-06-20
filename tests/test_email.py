@@ -46,7 +46,7 @@ def test_email_str_rejects_invalid_addresses(value: str) -> None:
 @pytest.mark.parametrize("value", [123, 1.5, None, ["a@b"], {"a@b"}])
 def test_email_str_rejects_non_strings(value: object) -> None:
     with pytest.raises(TypeError):
-        EmailStr(value)  # type: ignore[arg-type]
+        EmailStr(value)
 
 
 # ---------------------------------------------------------------------------
@@ -70,7 +70,7 @@ def test_validate_raises_for_an_invalid_instance() -> None:
 
 def test_validate_rejects_non_dataclass() -> None:
     with pytest.raises(TypeError):
-        EmailStr.validate("not-a-dataclass")  # type: ignore[arg-type]
+        EmailStr.validate("not-a-dataclass")
 
 
 @dataclass
@@ -90,7 +90,7 @@ def test_iter_fields_only_yields_annotated_ones() -> None:
 
 def test_iter_fields_rejects_non_dataclass() -> None:
     with pytest.raises(TypeError):
-        list(EmailStr.iter_fields("nope"))  # type: ignore[arg-type]
+        list(EmailStr.iter_fields("nope"))
 
 
 # ---------------------------------------------------------------------------
