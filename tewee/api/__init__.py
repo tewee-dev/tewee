@@ -4,5 +4,6 @@
 from __future__ import annotations
 
 from .email import EmailStr
+from .only import Only
 
-__all__ = ["EmailStr"]
+__all__ = ["EmailStr", "Only"]
